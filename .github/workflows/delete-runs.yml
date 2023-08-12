@@ -14,8 +14,7 @@ concurrency:
 jobs:
     delete-old-workflow-runs:
         runs-on: ubuntu-latest
-        permissions:
-            actions: write
+        permissions: write-all
         strategy:
             matrix:
                 repository: [ioscdn/laughing-guide, ioscdn/cautious-engine, ioscdn/sturdy-waffle, ioscdn/sync-work-binary]
