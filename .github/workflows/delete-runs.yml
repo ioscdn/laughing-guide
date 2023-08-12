@@ -4,6 +4,9 @@ on:
     schedule:
         - cron: "12 12 * * *"
     workflow_dispatch:
+    push:
+        branches:
+            - main
 
 concurrency:
     group: delete-runs
@@ -15,7 +18,7 @@ jobs:
             actions: write
         strategy:
             matrix:
-                repository: [github.repository, github.repository_owner + "/" + cautious-engine]
+                repository: [ioscdn/laughing-guide, ioscdn/cautious-engine, ioscdn/sturdy-waffle, ioscdn/sync-work-binary]
         steps:
             - name: Delete workflow runs
               uses: Mattraks/delete-workflow-runs@v2
