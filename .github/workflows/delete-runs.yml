@@ -14,7 +14,6 @@ concurrency:
 jobs:
     delete-old-workflow-runs:
         runs-on: ubuntu-latest
-        permissions: write-all
         strategy:
             matrix:
                 repository: [ioscdn/laughing-guide, ioscdn/cautious-engine, ioscdn/sturdy-waffle, ioscdn/sync-work-binary]
@@ -22,7 +21,7 @@ jobs:
             - name: Delete workflow runs
               uses: Mattraks/delete-workflow-runs@v2
               with:
-                  token: ${{ github.token }}
+                  token: ${{ secrets.TOKEN }}
                   repository: ${{ matrix.repository }}
                   retain_days: 7
                   keep_minimum_runs: 10
