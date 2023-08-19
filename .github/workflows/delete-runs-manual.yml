@@ -1,4 +1,5 @@
-name: Delete old workflow runs
+name: Manually delete workflows 
+
 on:
   workflow_dispatch:
     inputs:
@@ -6,7 +7,6 @@ on:
         description: 'Repository name'
         required: true
         type: string
-        default: {{ github.repository }}
       days:
         description: 'Number of days.'
         required: true
