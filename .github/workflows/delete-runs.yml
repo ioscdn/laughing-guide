@@ -16,7 +16,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                repository: [ioscdn/laughing-guide, ioscdn/cautious-engine, ioscdn/sturdy-waffle, ioscdn/sync-work-binary]
+                repository: [ioscdn/laughing-guide, ioscdn/cautious-engine, ioscdn/sync-work-binary]
         steps:
             - name: Delete workflow runs
               uses: Mattraks/delete-workflow-runs@v2
